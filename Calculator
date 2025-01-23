@@ -1,0 +1,71 @@
+import math
+import sys
+
+def display_menu():
+    print("\nAdvanced Calculator")
+    print("1. Addition (+)")
+    print("2. Subtraction (-)")
+    print("3. Multiplication (*)")
+    print("4. Division (/)")
+    print("5. Exponentiation (^)")
+    print("6. Square Root (sqrt)")
+    print("7. Logarithm (log)")
+    print("8. Sine (sin)")
+    print("9. Cosine (cos)")
+    print("10. Tangent (tan)")
+    print("11. Exit")
+    print("\nSelect an option (1-11):")
+
+def perform_operation(choice):
+    if choice in ['1', '2', '3', '4', '5']:
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+
+        if choice == '1':
+            print(f"Result: {num1 + num2}")
+        elif choice == '2':
+            print(f"Result: {num1 - num2}")
+        elif choice == '3':
+            print(f"Result: {num1 * num2}")
+        elif choice == '4':
+            if num2 != 0:
+                print(f"Result: {num1 / num2}")
+            else:
+                print("Error: Division by zero.")
+        elif choice == '5':
+            print(f"Result: {num1 ** num2}")
+
+    elif choice == '6':
+        num = float(input("Enter the number: "))
+        if num >= 0:
+            print(f"Result: {math.sqrt(num)}")
+        else:
+            print("Error: Negative number for square root.")
+
+    elif choice == '7':
+        num = float(input("Enter the number: "))
+        if num > 0:
+            print(f"Result: {math.log(num)}")
+        else:
+            print("Error: Logarithm undefined for zero or negative numbers.")
+
+    elif choice in ['8', '9', '10']:
+        angle = float(input("Enter the angle in degrees: "))
+        radians = math.radians(angle)
+        if choice == '8':
+            print(f"Result: {math.sin(radians)}")
+        elif choice == '9':
+            print(f"Result: {math.cos(radians)}")
+        elif choice == '10':
+            print(f"Result: {math.tan(radians)}")
+    elif choice == '11':
+        print("Exiting the calculator. Goodbye!")
+        sys.exit()
+    else:
+        print("Invalid choice. Please select a valid option.")
+
+# Main program loop
+while True:
+    display_menu()
+    user_choice = input("Enter your choice: ")
+    perform_operation(user_choice)
