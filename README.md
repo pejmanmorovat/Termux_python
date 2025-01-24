@@ -1,2 +1,3 @@
 # Termux_python
-python codes for an advanced calculator in termux
+python codes for termux
+created by Pejman Morovat
